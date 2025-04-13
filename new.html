@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up | Career Explorer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #9face6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .form-container {
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            max-width: 400px;
+            animation: slideUp 1s ease forwards;
+            transform: translateY(50px);
+            opacity: 0;
+        }
+
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        h2 {
+            margin-bottom: 25px;
+            color: #283593;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 12px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            transition: 0.3s;
+            font-size: 15px;
+        }
+
+        input:focus {
+            border-color: #5c6bc0;
+            box-shadow: 0 0 8px rgba(92, 107, 192, 0.3);
+            outline: none;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(to right, #3949ab, #5c6bc0);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 15px;
+            cursor: pointer;
+            transition: background 0.4s;
+        }
+
+        .btn:hover {
+            background: linear-gradient(to right, #5c6bc0, #3949ab);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(57, 73, 171, 0.3);
+        }
+
+        .switch-link {
+            text-align: center;
+            margin-top: 18px;
+            font-size: 14px;
+        }
+
+        .switch-link a {
+            text-decoration: none;
+            color: #3949ab;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .switch-link a:hover {
+            color: #1a237e;
+        }
+
+        @media screen and (max-width: 480px) {
+            .form-container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h2>Create an Account</h2>
+        <form id="signupForm">
+            <input type="text" id="name" placeholder="Full Name" required />
+            <input type="email" id="email" placeholder="Email" required />
+            <input type="password" id="password" placeholder="Password" required />
+            <button type="submit" class="btn">Sign Up</button>
+        </form>
+
+        <div class="switch-link">
+            Already have an account? <a href="new2.html">Log In</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Simulated storage (replace with backend later)
+            localStorage.setItem('user', JSON.stringify({ name, email, password }));
+
+            alert("Signup successful!");
+            window.location.href = 'login.html';
+        });
+    </script>
+
+</body>
+
+</html>

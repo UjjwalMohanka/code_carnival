@@ -1,0 +1,97 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 30% 98%;
+    --foreground: 260 25% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 260 70% 55%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 90% 50%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 260 20% 96%;
+    --muted-foreground: 260 15% 45%;
+
+    --accent: 260 50% 96%;
+    --accent-foreground: 260 50% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 260 30% 90%;
+    --input: 260 30% 90%;
+    --ring: 260 60% 55%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 260 25% 10%;
+    --foreground: 260 15% 90%;
+
+    --card: 260 25% 15%;
+    --card-foreground: 260 15% 90%;
+
+    --popover: 260 25% 15%;
+    --popover-foreground: 260 15% 90%;
+
+    --primary: 260 70% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 90% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 260 25% 25%;
+    --muted-foreground: 260 15% 70%;
+
+    --accent: 260 25% 25%;
+    --accent-foreground: 260 15% 90%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 260 15% 90%;
+
+    --border: 260 25% 25%;
+    --input: 260 25% 25%;
+    --ring: 260 60% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-advisor-purple to-advisor-blue bg-clip-text text-transparent;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .btn-primary {
+    @apply bg-advisor-purple text-white hover:bg-advisor-purple-dark transition-colors rounded-lg;
+  }
+  
+  .btn-secondary {
+    @apply bg-advisor-blue text-white hover:opacity-90 transition-colors rounded-lg;
+  }
+}

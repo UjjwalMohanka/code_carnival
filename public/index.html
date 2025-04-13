@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligent Virtual Career Advisor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <h1 class="site-title"><a href="/">Intelligent Virtual Career Advisor</a></h1>
+                <nav class="site-nav">
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#assess">Assess Skills</a></li>
+                        <li><a href="#suggestions">Career Suggestions</a></li>
+                        <li><a href="#prepare">Resume & Interview Prep</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <section id="hero" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h2 class="hero-title">Navigate Your Future with Intelligent Career Guidance</h2>
+                    <p class="hero-subtitle">Discover clarity and direction with our AI-powered platform, designed to
+                        illuminate your ideal career path.</p>
+                    <a href="#assess" class="button primary-button">Begin Your Journey</a>
+                </div>
+                <div class="hero-image">
+                    <img src="https://image.pollinations.ai/prompt/abstract%20ai%20career%20guidance"
+                        alt="AI guiding career path" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section about-section">
+            <div class="container about-container">
+                <div class="about-image">
+                    <img src="https://image.pollinations.ai/prompt/abstract%20ai%20teamwork" alt="AI assisting teamwork"
+                        loading="lazy">
+                </div>
+                <div class="about-content">
+                    <h2 class="section-title">Our Vision for Your Career Success</h2>
+                    <p class="section-description">We believe that everyone deserves a fulfilling and prosperous career.
+                        Our intelligent advisor provides the insights and tools you need to make informed decisions and
+                        achieve your professional aspirations.</p>
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-lightbulb fa-2x"></i>
+                            <h3>Data-Driven Insights</h3>
+                            <p>Leveraging real-time job market data, industry trends, and advanced AI algorithms to
+                                provide you with the most relevant information.</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-user-graduate fa-2x"></i>
+                            <h3>Personalized Guidance</h3>
+                            <p>Tailored recommendations based on a comprehensive analysis of your unique skills,
+                                experience, interests, and learning style.</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-briefcase fa-2x"></i>
+                            <h3>Career Advancement</h3>
+                            <p>Comprehensive resources and tools to help you build a compelling resume, master interview
+                                techniques, and expand your professional network for long-term career growth.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="assess" class="section form-section assess-section">
+            <div class="container assess-container">
+                <div class="assess-content">
+                    <h2 class="section-title">Evaluate Your Professional Profile</h2>
+                    <p class="section-description">Provide us with some details about your experience and aspirations to
+                        receive personalized career insights.</p>
+                    <form id="skillAssessmentForm">
+                        <div class="form-group">
+                            <label for="experience"><i class="fas fa-clock"></i> Years of Professional
+                                Experience:</label>
+                            <input type="number" id="experience" name="experience" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="education"><i class="fas fa-graduation-cap"></i> Highest Level of
+                                Education:</label>
+                            <select id="education" name="education">
+                                <option value="">Select</option>
+                                <option value="high_school">High School Diploma</option>
+                                <option value="associate">Associate's Degree</option>
+                                <option value="bachelor">Bachelor's Degree</option>
+                                <option value="master">Master's Degree</option>
+                                <option value="phd">Doctorate (PhD)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="skills"><i class="fas fa-tools"></i> Key Skills (separate with commas):</label>
+                            <textarea id="skills" name="skills" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="interests"><i class="fas fa-compass"></i> Areas of Professional
+                                Interest:</label>
+                            <input type="text" id="interests" name="interests">
+                        </div>
+                        <button type="submit" class="button primary-button"><i class="fas fa-check-circle"></i> Submit
+                            for Analysis</button>
+                        <div id="assessmentResults" class="hidden results-area">
+                            <h3><i class="fas fa-chart-bar"></i> Potential Career Directions</h3>
+                            <ul id="careerSuggestionsList">
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+                <div class="assess-image">
+                    <img src="https://image.pollinations.ai/prompt/abstract%20ai%20skill%20assessment"
+                        alt="AI analyzing skills" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section id="suggestions" class="section suggestions-section">
+            <div class="container suggestions-container">
+                <div class="suggestions-image">
+                    <img src="https://image.pollinations.ai/prompt/abstract%20ai%20career%20suggestions"
+                        alt="AI suggesting careers" loading="lazy">
+                </div>
+                <div class="suggestions-content">
+                    <h2 class="section-title">Explore Curated Career Pathways</h2>
+                    <p class="section-description">Based on your unique profile and the evolving job market, discover a
+                        diverse range of career opportunities with detailed insights into job roles, required skills,
+                        potential growth, and salary expectations.</p>
+                    <ul>
+                        <li><strong>Personalized Job Matches:</strong> View jobs that closely align with your assessed
+                            skills and interests.</li>
+                        <li><strong>Industry Overviews:</strong> Gain insights into different industries, their growth
+                            potential, and key players.</li>
+                        <li><strong>Skill Demand Analysis:</strong> Understand which skills are currently in high demand
+                            across various sectors.</li>
+                        <li><strong>Career Path Progression:</strong> Explore potential career trajectories and how you
+                            can advance in your chosen field.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="prepare" class="section prepare-section">
+            <div class="container prepare-container">
+                <h2 class="section-title">Elevate Your Application and Interview Skills</h2>
+                <p class="section-description">Access comprehensive resources and expert guidance to excel in your job
+                    search, from crafting a standout resume to acing your interviews.</p>
+                <div class="grid-container prepare-grid">
+                    <div class="card expandable-card">
+                        <i class="fas fa-file-alt fa-3x card-icon"></i>
+                        <h3>Craft a Compelling Resume</h3>
+                        <p>Learn how to create a resume that highlights your key skills and experience effectively.</p>
+                        <button class="button tertiary-button expand-button" data-target="resume-info">Learn
+                            More</button>
+                        <div id="resume-info" class="expanded-content hidden">
+                            <h4>Key Resume Strategies:</h4>
+                            <ul>
+                                <li><strong>Keywords are Crucial:</strong> Incorporate industry-specific keywords that
+                                    Applicant Tracking Systems (ATS) look for.</li>
+                                <li><strong>Quantify Achievements:</strong> Use numbers and data to demonstrate the
+                                    impact of your work.</li>
+                                <li><strong>Concise and Clear Formatting:</strong> Ensure your resume is easy to read
+                                    and visually appealing.</li>
+                                <li><strong>Highlight Relevant Experience:</strong> Focus on experiences that directly
+                                    relate to the jobs you're applying for.</li>
+                                <li><strong>Tailor Your Summary/Objective:</strong> Customize this section for each
+                                    application to grab the recruiter's attention.</li>
+                            </ul>
+                            <p>Explore our AI-powered resume builder that provides real-time feedback and optimization
+                                suggestions.</p>
+                            <a href="#" class="button secondary-button">Access AI Resume Builder</a>
+                        </div>
+                    </div>
+                    <div class="card expandable-card">
+                        <i class="fas fa-microphone fa-3x card-icon"></i>
+                        <h3>Master the Art of the Interview</h3>
+                        <p>Prepare effectively for your job interviews with our expert tips and techniques.</p>
+                        <button class="button tertiary-button expand-button" data-target="interview-info">Explore
+                            Tips</button>
+                        <div id="interview-info" class="expanded-content hidden">
+                            <h4>Essential Interview Techniques:</h4>
+                            <ul>
+                                <li><strong>Behavioral Questions:</strong> Understand the STAR method (Situation, Task,
+                                    Action, Result) to structure your answers effectively.</li>
+                                <li><strong>Technical Questions:</strong> Practice your problem-solving skills and be
+                                    prepared to explain your thought process.</li>
+                                <li><strong>Company Research is Key:</strong> Demonstrate your knowledge of the
+                                    company's mission, values, and recent achievements.</li>
+                                <li><strong>Ask Insightful Questions:</strong> Prepare 2-3 thoughtful questions to show
+                                    your engagement and interest.</li>
+                                <li><strong>Follow-Up Professionally:</strong> Send a thank-you email within 24 hours of
+                                    the interview.</li>
+                            </ul>
+                            <p>Practice with our AI-driven mock interview tool that analyzes your responses and provides
+                                feedback on your delivery and content.</p>
+                            <a href="#" class="button secondary-button">Try AI Mock Interview</a>
+                        </div>
+                    </div>
+                    <div class="card expandable-card">
+                        <i class="fas fa-network-wired fa-3x card-icon"></i>
+                        <h3>Build Your Professional Network</h3>
+                        <p>Discover strategies for connecting with industry professionals and expanding your
+                            opportunities.</p>
+                        <button class="button tertiary-button expand-button" data-target="networking-info">Discover
+                            Networking</button>
+                        <div id="networking-info" class="expanded-content hidden">
+                            <h4>Effective Networking Strategies:</h4>
+                            <ul>
+                                <li><strong>LinkedIn Optimization:</strong> Create a professional profile and actively
+                                    engage with your network.</li>
+                                <li><strong>Attend Industry Events:</strong> Participate in conferences, workshops, and
+                                    meetups to make valuable connections.</li>
+                                <li><strong>Informational Interviews:</strong> Reach out to professionals in your field
+                                    to learn about their experiences and gain advice.</li>
+                                <li><strong>Build Genuine Relationships:</strong> Focus on offering value and building
+                                    long-term connections rather than just asking for favors.</li>
+                                <li><strong>Follow Up Strategically:</strong> After making a connection, follow up with
+                                    a personalized message to maintain the relationship.</li>
+                            </ul>
+                            <p>Explore our AI-powered networking tool that suggests relevant connections and helps you
+                                craft effective outreach messages.</p>
+                            <a href="#" class="button secondary-button">Access AI Networking Tool</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="prepare-image">
+                    <img src="https://image.pollinations.ai/prompt/abstract%20ai%20interview%20preparation"
+                        alt="AI assisting career preparation" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <div class="container contact-container">
+                <div class="contact-content">
+                    <h2 class="section-title">Connect With Our Guidance Team</h2>
+                    <p class="section-description">We're here to support your career exploration. Reach out with any
+                        questions or feedback.</p>
+                    <form id="contactForm" class="contact-form"
+                        action="http://localhost/code-carnival-create-main/public/data.php" method="post">
+                        <div class="form-group">
+                            <label for="name"><i class="fas fa-user"></i> Your Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email"><i class="fas fa-envelope"></i> Your Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message"><i class="fas fa-comment-dots"></i> Your Message:</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="button primary-button"><i class="fas fa-paper-plane"></i> Send
+                            Inquiry</button>
+                    </form>
+                </div>
+                <div class="contact-image">
+                    <img src="https://image.pollinations.ai/prompt/abstract%20ai%20support" alt="AI providing support"
+                        loading="lazy">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 Intelligent Virtual Career Advisor. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+</body>
+<script src="script.js"></script>
+
+</html>

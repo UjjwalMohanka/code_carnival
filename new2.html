@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | Career Explorer</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            height: 100vh;
+            background: linear-gradient(120deg, #3f51b5, #2196f3, #00bcd4);
+            background-size: 400% 400%;
+            animation: gradientMove 15s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .form-container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            animation: slideIn 1s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(40px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #0d47a1;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .input-group {
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 14px 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            transition: border 0.3s ease;
+        }
+
+        .input-group input:focus {
+            border-color: #2196f3;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px;
+            background: #0d47a1;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s ease, background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #1565c0;
+            transform: scale(1.03);
+        }
+
+        .btn a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+
+        .switch-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .switch-link a {
+            text-decoration: none;
+            color: #0d47a1;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .switch-link a:hover {
+            color: #1565c0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h2>Login</h2>
+        <form>
+            <div class="input-group">
+                <input type="email" placeholder="Email" required />
+            </div>
+            <div class="input-group">
+                <input type="password" placeholder="Password" required />
+            </div>
+            <button type="submit" class="btn"><a href="new3.html">Login</a></button>
+        </form>
+        <div class="switch-link">
+            Don't have an account? <a href="signup.html">Sign up here</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

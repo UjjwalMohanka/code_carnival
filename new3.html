@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Career Explorer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            overflow-x: hidden;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        header {
+            background: #0d47a1;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease;
+        }
+
+        header:hover {
+            background: #1565c0;
+        }
+
+        header h1 {
+            font-size: 26px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #bbdefb;
+        }
+
+        .hero {
+            background: linear-gradient(to right, #e3f2fd, #ffffff);
+            text-align: center;
+            padding: 100px 20px 60px;
+            animation: slideUp 1.5s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(40px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            color: #0d47a1;
+            margin-bottom: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: auto;
+            margin-bottom: 30px;
+            opacity: 0.7;
+        }
+
+        .cta-btn {
+            padding: 14px 28px;
+            font-size: 16px;
+            background: #0d47a1;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background: #1565c0;
+            transform: scale(1.05);
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: auto;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .section-title {
+            font-size: 32px;
+            color: #0d47a1;
+            text-align: center;
+            margin-bottom: 30px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .feature {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .feature h3 {
+            color: #0d47a1;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .feature p {
+            font-size: 15px;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            transition: all 0.3s ease;
+        }
+
+        form input:focus,
+        form textarea:focus {
+            border-color: #0d47a1;
+            outline: none;
+        }
+
+        form button {
+            padding: 12px 20px;
+            background: #0d47a1;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        form button:hover {
+            background: #1565c0;
+        }
+
+        footer {
+            background: #0d47a1;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer a {
+            color: #bbdefb;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .scroll-down {
+            font-size: 30px;
+            margin-top: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* New Resume Upload Panel Styles */
+        .resume-panel {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .upload-area {
+            border: 2px dashed #bbdefb;
+            border-radius: 12px;
+            padding: 40px 20px;
+            text-align: center;
+            margin: 20px 0;
+            background: #f5f9ff;
+            transition: all 0.3s ease;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .upload-area:hover {
+            border-color: #0d47a1;
+            background: #e3f2fd;
+        }
+
+        .upload-icon {
+            font-size: 48px;
+            color: #0d47a1;
+            margin-bottom: 15px;
+        }
+
+        .upload-text {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .upload-subtext {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .file-input {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .upload-btn {
+            background: #0d47a1;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            width: 100%;
+        }
+
+        .upload-btn:hover {
+            background: #1565c0;
+            transform: translateY(-2px);
+        }
+
+        .file-types {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .file-type {
+            background: #e3f2fd;
+            color: #0d47a1;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .selected-file {
+            margin-top: 15px;
+            padding: 12px;
+            background: #e3f2fd;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .selected-file.active {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .file-name {
+            font-weight: 600;
+            color: #0d47a1;
+        }
+
+        .remove-file {
+            color: #e53935;
+            cursor: pointer;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Career Explorer</h1>
+        <nav>
+            <a href="#upload">Upload Resume</a>
+            <a href="#about">About</a>
+            <a href="#features">Features</a>
+            <a href="#contact">Contact</a>
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Find Your Ideal Career Path</h2>
+        <p>Upload your resume and let us guide you to your perfect professional future using AI-powered analysis.</p>
+        <a href="#upload" class="cta-btn">Upload Your Resume</a>
+        <div class="scroll-down">⬇</div>
+    </section>
+
+    <section id="upload">
+        <h2 class="section-title">Upload Your Resume</h2>
+        <div class="resume-panel">
+            <p style="text-align: center; margin-bottom: 20px;">Let our AI analyze your resume and provide personalized
+                career recommendations.</p>
+
+            <div class="upload-area" id="dropArea">
+                <div class="upload-icon">📄</div>
+                <div class="upload-text">Drag and drop your resume here</div>
+                <div class="upload-subtext">or click to browse files</div>
+                <input type="file" id="fileInput" class="file-input" accept=".pdf,.doc,.docx">
+
+                <div class="file-types">
+                    <div class="file-type">PDF</div>
+                    <div class="file-type">DOC</div>
+                    <div class="file-type">DOCX</div>
+                </div>
+            </div>
+
+            <div class="selected-file" id="selectedFile">
+                <div class="file-name" id="fileName"></div>
+                <div class="remove-file" id="removeFile">Remove</div>
+            </div>
+
+            <button class="upload-btn" id="uploadBtn">Analyze My Resume</button>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">About Us</h2>
+        <p style="text-align:center; max-width: 700px; margin: auto;">Career Explorer is built to help individuals
+            discover the career path that best fits their unique set of skills and experiences. Using advanced resume
+            analysis, we match users with their most promising industries and roles.</p>
+    </section>
+
+    <section id="features">
+        <h2 class="section-title">Key Features</h2>
+        <div class="features">
+            <div class="feature">
+                <h3>📄 Smart Resume Parsing</h3>
+                <p>Analyze your resume instantly to extract core strengths and technical expertise.</p>
+            </div>
+            <div class="feature">
+                <h3>💡 AI Career Suggestions</h3>
+                <p>Receive career field recommendations tailored to your background and growth areas.</p>
+            </div>
+            <div class="feature">
+                <h3>📊 Result Dashboard</h3>
+                <p>Visual feedback with clear action points and next steps to get ahead in your journey.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <textarea rows="4" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Career Explorer. All rights reserved.</p>
+        <div>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookies</a>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript to handle file selection
+        document.addEventListener('DOMContentLoaded', function () {
+            const fileInput = document.getElementById('fileInput');
+            const dropArea = document.getElementById('dropArea');
+            const selectedFileDiv = document.getElementById('selectedFile');
+            const fileName = document.getElementById('fileName');
+            const removeFile = document.getElementById('removeFile');
+            const uploadBtn = document.getElementById('uploadBtn');
+
+            // Handle file selection
+            fileInput.addEventListener('change', function () {
+                if (this.files && this.files[0]) {
+                    fileName.textContent = this.files[0].name;
+                    selectedFileDiv.classList.add('active');
+                    uploadBtn.textContent = 'Analyze My Resume';
+                }
+            });
+
+            // Handle drag and drop
+            dropArea.addEventListener('dragover', function (e) {
+                e.preventDefault();
+                dropArea.style.borderColor = '#0d47a1';
+                dropArea.style.background = '#e3f2fd';
+            });
+
+            dropArea.addEventListener('dragleave', function () {
+                dropArea.style.borderColor = '#bbdefb';
+                dropArea.style.background = '#f5f9ff';
+            });
+
+            dropArea.addEventListener('drop', function (e) {
+                e.preventDefault();
+                dropArea.style.borderColor = '#bbdefb';
+                dropArea.style.background = '#f5f9ff';
+
+                if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+                    fileInput.files = e.dataTransfer.files;
+                    fileName.textContent = e.dataTransfer.files[0].name;
+                    selectedFileDiv.classList.add('active');
+                    uploadBtn.textContent = 'Analyze My Resume';
+                }
+            });
+
+            // Remove selected file
+            removeFile.addEventListener('click', function () {
+                fileInput.value = '';
+                selectedFileDiv.classList.remove('active');
+                uploadBtn.textContent = 'Analyze My Resume';
+            });
+
+            // Handle upload button
+            uploadBtn.addEventListener('click', function () {
+                if (fileInput.files && fileInput.files[0]) {
+                    // In a real implementation, you would handle the file upload here
+                    alert('Resume uploaded! Our AI is analyzing your resume...');
+                    // You would typically send the file to your server here
+                } else {
+                    alert('Please select a resume file first.');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
