@@ -1,8 +1,8 @@
-# Welcome to your Lovable project
+# Welcome to Our project
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/6b635daa-9cc1-4409-860e-6238d9392055
+**URL**: http://localhost/code-carnival-create-main/public/index.html
 
 ## How can I edit this code?
 
@@ -10,7 +10,7 @@ There are several ways of editing your application.
 
 **Use Lovable**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/6b635daa-9cc1-4409-860e-6238d9392055) and start prompting.
+Simply visit the [Project]([https://lovable.dev/projects/6b635daa-9cc1-4409-860e-6238d9392055](http://localhost/code-carnival-create-main/public/index.html)) and start prompting.
 
 Changes made via Lovable will be committed automatically to this repo.
 
